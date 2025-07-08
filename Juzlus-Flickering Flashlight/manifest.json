@@ -1,5 +1,5 @@
 {
-    "name": "Flickering Flashlight",
+    "name": "FlickeringFlashlight",
     "description": "This mod adds random flashlight flickering at low battery levels, enhancing tension and realism during gameplay. Possible configuration.",
     "version_number": "1.0.0",
     "dependencies": ["BepInEx-BepInExPack-5.4.2100"],
