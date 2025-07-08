@@ -38,10 +38,14 @@ The script is based on the following YouTube video: https://www.youtube.com/watc
    - `Enable Logs` - Show debug messages in the console about flashlight flickering. [default false]
 
 
-## 🔥 Screenshots
+## 🔥 Preview
 
-![Prieview](https://github.com/user-attachments/assets/492ad78a-ff5a-446e-bc49-71bbe22672d8)
+![flickering_flashlight_1](https://github.com/Juzlus/LethalCompany_FlickeringFlashlight/blob/main/Juzlus-Flickering%20Flashlight/Preview/flickering_flashlight_1.gif?raw=true)
+![flickering_flashlight_2](https://github.com/Juzlus/LethalCompany_FlickeringFlashlight/blob/main/Juzlus-Flickering%20Flashlight/Preview/flickering_flashlight_2.gif?raw=true)
+![flickering_flashlight_3](https://github.com/Juzlus/LethalCompany_FlickeringFlashlight/blob/main/Juzlus-Flickering%20Flashlight/Preview/flickering_flashlight_3.gif?raw=true)
+![flickering_flashlight_4](https://github.com/Juzlus/LethalCompany_FlickeringFlashlight/blob/main/Juzlus-Flickering%20Flashlight/Preview/flickering_flashlight_4.gif?raw=true)
 
+Mods were used at the preview: [ShyHUD](https://thunderstore.io/c/lethal-company/p/letmusicring/ShyHUD/), [EladsHUD](https://thunderstore.io/c/lethal-company/p/EladNLG/EladsHUD/), [Full Darkness](https://thunderstore.io/c/lethal-company/p/IntegrityChaos/Full_Darkness/)
 
 ## 📝 Feedback
 
