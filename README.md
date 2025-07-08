@@ -5,7 +5,7 @@ This is a modification to [Lethal Company](https://store.steampowered.com/app/19
 
 The script is based on the following [YouTube video](https://www.youtube.com/watch?v=jfgUotZXiBM&ab_channel=GameDevBox).
 
- [Page on Thunderstore](https://steamcommunity.com/sharedfiles/filedetails/?id=3027915926). 
+ [Page on Thunderstore](https://thunderstore.io/c/lethal-company/p/Juzlus/FlickeringFlashlight/). 
 
 # 🔨 How it works
 
