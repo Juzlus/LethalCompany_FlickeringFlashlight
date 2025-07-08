@@ -62,11 +62,10 @@ namespace LethalCompanyFlickeringFlashlight
                 new ConfigDescription("Minimum delay (in seconds) between flickers.", new AcceptableValueRange<float>(.01f, 2f)));
             maxFlickerDelay = instance.Config.Bind<float>("Duration", "Max Flicker Delay", .2f,
                 new ConfigDescription("Maximum delay (in seconds) between flickers.", new AcceptableValueRange<float>(2f, 8f)));
-
             cooldownLow = instance.Config.Bind<float>("Duration", "Next Low Flick", 10f,
                 new ConfigDescription("Minimum delay (in seconds) between flashlight flickers when battery is low.", new AcceptableValueRange<float>(0f, 60f)));
             cooldownCritical = instance.Config.Bind<float>("Duration", "Next Critical Flick", 3f,
-                new ConfigDescription("Delay (in seconds) between flashlight flickers when battery is critically low", new AcceptableValueRange<float>(0f, 30f)));
+                new ConfigDescription("Delay (in seconds) between flashlight flickers when battery is critically low.", new AcceptableValueRange<float>(0f, 30f)));
 
             lowEnergyFlickerChance = instance.Config.Bind<float>("Chance", "Low Energy Flicker Chance", .01f,
                 new ConfigDescription("Chance (%) that the flashlight will flicker when battery is low.", new AcceptableValueRange<float>(.01f, 10f)));

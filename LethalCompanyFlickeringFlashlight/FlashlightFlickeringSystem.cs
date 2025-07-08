@@ -10,8 +10,9 @@ public class FlashlightFlickeringSystem : MonoBehaviour
     public bool critical;
     public bool isFlickering;
     public Coroutine flickerRoutine;
-    private FlashlightItem flashlight;
 
+    private string info;
+    private FlashlightItem flashlight;
     private float nextFlick = 0f;
 
     public void Init(FlashlightItem _flashlight)
@@ -33,19 +34,27 @@ public class FlashlightFlickeringSystem : MonoBehaviour
         if (flashlight.insertedBattery.charge <= FlickeringFlashlight.criticalEnergy.Value)
         {
             critical = true;
+            info = $"CRITICAL battery, {flashlight.insertedBattery.charge}%";
             StartFlickering();
         }
         else if ((flashlight.insertedBattery.charge <= FlickeringFlashlight.lowEnergy.Value
              && Random.Range(0, 100) < FlickeringFlashlight.lowEnergyFlickerChance.Value))
         {
             critical = false;
+            info = $"LOW battery, {flashlight.insertedBattery.charge}%";
             StartFlickering();
         }
-        else if (flashlight?.playerHeldBy && (
-             FlickeringFlashlight.fearLevel.Value <= flashlight?.playerHeldBy?.playersManager?.fearLevel
-             || FlickeringFlashlight.insanityLevel.Value <= (flashlight?.playerHeldBy?.insanityLevel / flashlight?.playerHeldBy?.maxInsanityLevel)))
+        else if (flashlight?.playerHeldBy)
+            if (FlickeringFlashlight.fearLevel.Value <= flashlight?.playerHeldBy?.playersManager?.fearLevel)
+            {
+                critical = true;
+                info = $"FEAR level, {flashlight?.playerHeldBy?.playersManager?.fearLevel}";
+                StartFlickering();
+            }
+            else if (FlickeringFlashlight.insanityLevel.Value <= (flashlight?.playerHeldBy?.insanityLevel / flashlight?.playerHeldBy?.maxInsanityLevel))
             {
                 critical = false;
+                info = $"INSANITY level, {(flashlight?.playerHeldBy?.insanityLevel / flashlight?.playerHeldBy?.maxInsanityLevel)}%";
                 StartFlickering();
             }
     }
@@ -68,9 +77,9 @@ public class FlashlightFlickeringSystem : MonoBehaviour
             flashlight.SyncBatteryServerRpc((int)(flashlight.insertedBattery.charge * 100f));
         if (FlickeringFlashlight.enableDebugLog.Value)
             if (flashlight?.playerHeldBy)
-                FlickeringFlashlight.GetLogger().LogInfo($"{flashlight?.playerHeldBy?.playerUsername}'s flashlight is flickering ({(critical ? "CRITICAL" : "LOW")} battery).");
+                FlickeringFlashlight.GetLogger().LogInfo($"{flashlight?.playerHeldBy?.playerUsername}'s flashlight is flickering ({info}).");
             else
-                FlickeringFlashlight.GetLogger().LogInfo($"Flashlight ({flashlight?.name}) is flickering ({(critical ? "CRITICAL" : "LOW")} battery).");
+                FlickeringFlashlight.GetLogger().LogInfo($"Flashlight ({flashlight?.name}) is flickering ({info}).");
 
         nextFlick = Time.time + (critical ? FlickeringFlashlight.cooldownCritical.Value : FlickeringFlashlight.cooldownLow.Value);
         isFlickering = true;
