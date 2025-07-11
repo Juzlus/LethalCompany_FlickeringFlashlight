@@ -54,7 +54,7 @@ public class FlashlightFlickeringSystem : MonoBehaviour
             else if (FlickeringFlashlight.insanityLevel.Value <= (flashlight?.playerHeldBy?.insanityLevel / flashlight?.playerHeldBy?.maxInsanityLevel))
             {
                 critical = false;
-                info = $"INSANITY level, {(flashlight?.playerHeldBy?.insanityLevel / flashlight?.playerHeldBy?.maxInsanityLevel)}%";
+                info = $"INSANITY level, {(flashlight?.playerHeldBy?.insanityLevel / flashlight?.playerHeldBy?.maxInsanityLevel)}";
                 StartFlickering();
             }
     }
@@ -64,8 +64,8 @@ public class FlashlightFlickeringSystem : MonoBehaviour
         if (nextFlick > Time.time)
             return;
 
-        float min = critical ? (FlickeringFlashlight.minFlickerDelay.Value / FlickeringFlashlight.criticalEnergyFlickerMultiplier.Value) : FlickeringFlashlight.minFlickerDelay.Value;
-        float max = critical ? (FlickeringFlashlight.maxFlickerDelay.Value / FlickeringFlashlight.criticalEnergyFlickerMultiplier.Value) : FlickeringFlashlight.maxFlickerDelay.Value;
+        float min = FlickeringFlashlight.minFlickerDelay.Value / (critical ? FlickeringFlashlight.criticalEnergyFlickerMultiplier.Value : FlickeringFlashlight.lowEnergyFlickerMultiplier.Value);
+        float max = FlickeringFlashlight.maxFlickerDelay.Value / (critical ? FlickeringFlashlight.criticalEnergyFlickerMultiplier.Value : FlickeringFlashlight.lowEnergyFlickerMultiplier.Value);
 
         if (flickerRoutine != null) CoroutineRunner.Instance.Stop(flickerRoutine);
         flickerRoutine = CoroutineRunner.Instance.Run(Flickering(min, max));

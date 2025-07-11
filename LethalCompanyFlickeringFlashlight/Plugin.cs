@@ -23,6 +23,7 @@ namespace LethalCompanyFlickeringFlashlight
         public static ConfigEntry<float> minFlickerDelay;
         public static ConfigEntry<float> maxFlickerDelay;
         public static ConfigEntry<float> lowEnergyFlickerChance;
+        public static ConfigEntry<float> lowEnergyFlickerMultiplier;
         public static ConfigEntry<float> criticalEnergyFlickerMultiplier;
         public static ConfigEntry<bool> infinityCriticalFlashlight;
         public static ConfigEntry<bool> enableDebugLog;
@@ -74,8 +75,10 @@ namespace LethalCompanyFlickeringFlashlight
             insanityLevel = instance.Config.Bind<float>("Chance", "Minimal Insanity Level", .9f,
                 new ConfigDescription("Flashlight starts flickering when player insanity goes above this percentage (You gain insanity by being alone).", new AcceptableValueRange<float>(0f, 1f)));
 
+            lowEnergyFlickerMultiplier = instance.Config.Bind<float>("Frequency", "Low Energy Flicker Multiplier", 10f,
+                new ConfigDescription("Multiplier applied to flicker frequency when battery is at low level.", new AcceptableValueRange<float>(1f, 20f)));
             criticalEnergyFlickerMultiplier = instance.Config.Bind<float>("Frequency", "Critical Energy Flicker Multiplier", 2f,
-                new ConfigDescription("Multiplier applied to flicker frequency when battery is at critical level.", new AcceptableValueRange<float>(1f, 10f)));
+                new ConfigDescription("Multiplier applied to flicker frequency when battery is at critical level.", new AcceptableValueRange<float>(1f, 20f)));
 
             infinityCriticalFlashlight = instance.Config.Bind<bool>("Other", "Infinity Critical Energy", false, "Prevents the flashlight battery from dropping below 5% (infinity critical energy).");
 
