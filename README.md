@@ -31,7 +31,8 @@ The script is based on the following [YouTube video](https://www.youtube.com/wat
    - `Minimal Fear Level` - Flashlight start flickering when player fear goes above this percentage. <0,1> [default 0.4]
    - `Minimal Insanity Level` - Flashlight starts flickering when player insanity goes above this percentage (You gain insanity by being alone). <0,1> [default 0.9]
 - **Frequency**
-   - `Critical Energy Flicker Multiplier` - Multiplier applied to flicker frequency when battery is at critical level. <1,10> [default 2]
+   - `Low Energy Flicker Multiplier` - Multiplier applied to flicker frequency when battery is at low level. <1,20> [default 10]
+   - `Critical Energy Flicker Multiplier` - Multiplier applied to flicker frequency when battery is at critical level. <1,20> [default 2]
 - **Other**
    - `Infinity Critical Energy` - Prevents the flashlight battery from dropping below 5% (infinity critical energy). [default false]
 - **Debug**
@@ -47,8 +48,8 @@ The script is based on the following [YouTube video](https://www.youtube.com/wat
 
 ![flickering_flashlight_1](https://github.com/Juzlus/LethalCompany_FlickeringFlashlight/blob/main/Juzlus-Flickering%20Flashlight/Preview/flickering_flashlight_1.gif?raw=true)
 ![flickering_flashlight_2](https://github.com/Juzlus/LethalCompany_FlickeringFlashlight/blob/main/Juzlus-Flickering%20Flashlight/Preview/flickering_flashlight_2.gif?raw=true)
-![flickering_flashlight_3](https://github.com/Juzlus/LethalCompany_FlickeringFlashlight/blob/main/Juzlus-Flickering%20Flashlight/Preview/flickering_flashlight_3.gif?raw=true)
 ![flickering_flashlight_4](https://github.com/Juzlus/LethalCompany_FlickeringFlashlight/blob/main/Juzlus-Flickering%20Flashlight/Preview/flickering_flashlight_4.gif?raw=true)
+![flickering_flashlight_5](https://github.com/Juzlus/LethalCompany_FlickeringFlashlight/blob/main/Juzlus-Flickering%20Flashlight/Preview/flickering_flashlight_5.gif?raw=true)
 
 Mods were used at the preview: [ShyHUD](https://thunderstore.io/c/lethal-company/p/letmusicring/ShyHUD/), [EladsHUD](https://thunderstore.io/c/lethal-company/p/EladNLG/EladsHUD/), [Full Darkness](https://thunderstore.io/c/lethal-company/p/IntegrityChaos/Full_Darkness/)
 
